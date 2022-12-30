@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools{
-    maven 'MavenForTomcatSrv'
+    maven 'jenkins_tomcat'
     }
     stages {
         stage("git") {
