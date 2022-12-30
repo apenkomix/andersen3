@@ -63,7 +63,7 @@ public class UserServlet extends HttpServlet {
         List<User> users = userDAO.getAllUsers();
         request.setAttribute("user", users);
         try {
-            request.getRequestDispatcher("/user.jsp").forward(request, response);
+            request.getRequestDispatcher("user.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -72,7 +72,7 @@ public class UserServlet extends HttpServlet {
     public void addNewUser(HttpServletRequest request, HttpServletResponse response) {
         request.setAttribute("user", new User());
         try {
-            request.getRequestDispatcher("/new-user.jsp").forward(request, response);
+            request.getRequestDispatcher("new-user.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -84,7 +84,7 @@ public class UserServlet extends HttpServlet {
                 userDAO.getUserById
                         (Long.parseLong(request.getParameter("id"))));
         try {
-            request.getRequestDispatcher("/new-user.jsp").forward(request, response);
+            request.getRequestDispatcher("new-user.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
