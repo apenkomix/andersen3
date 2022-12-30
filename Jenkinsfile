@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("git") {
             steps {
-                git credentialsId: 'jenkins_T', url: 'git@github.com:apenkomix/andersen3.git'
+                git credentialsId: '12345', url: 'git@github.com:apenkomix/andersen3.git'
             }
         }
         stage("build") {
